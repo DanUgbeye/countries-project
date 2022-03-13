@@ -677,6 +677,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 2rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -787,6 +799,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
+.text-\[14px\] {
+  font-size: 14px;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -809,6 +825,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-extralight {
   font-weight: 200;
+}
+
+.font-\[600\] {
+  font-weight: 600;
+}
+
+.font-\[800\] {
+  font-weight: 800;
 }
 
 .text-\[\#999\] {
