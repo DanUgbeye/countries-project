@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="  ">
+<html lang="en" class=" text-[14px] md:text-[16px]  ">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,8 @@
   
   <header class=" shadow-md bg-[hsl(0_0%_100%)] flex px-4 justify-between py-4 mb-8 ">
 
-    <h2 class=" font-bold text-2xl ">Where in the World?</h2>
+    <h2 class=" font-bold text-lg sm:text-2xl ">Where in the World?</h2>
+
     <button class=" flex gap-1 font-semibold  "> 
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -51,26 +52,38 @@
       
     </section>
 
-    <div id="country-container" class=" flex flex-col gap-10 items-center sm:grid sm:justify-between sm:place-items-center  sm:grid-cols-[repeat(auto-fit,_15rem)]  ">
+    <div id="country-container" class=" relative flex flex-col gap-10 items-center sm:grid sm:justify-between sm:place-items-center  sm:grid-cols-[repeat(auto-fit,_15rem)]  ">
 
       <!-- A COUNTRY -->
-      <div class=" w-fit shadow-md overflow-hidden rounded-md ">
+      <div id="country" class=" hidden w-fit shadow-md overflow-hidden rounded-md ">
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="country flag" class=" bg-blue-400 max-w-[15rem] min-w-[7.5rem] max-h-[7.5rem] min-h-[7.5rem] " />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="country flag" class=" min-w-[15rem] max-h-[7.5rem] min-h-[7.5rem] " loading="lazy" />
 
         <div class=" p-4 bg-[hsl(0_0%_100%)] ">
 
-          <h3 id="country-name" class=" font-[800] text-lg mb-3 ">Nigeria</h3>
+          <h3 id="country-name" class=" font-[600] text-xl mb-3 ">
+            Nigeria
+          </h3>
 
-          <p class=" font-[600]  ">Population: <span id="population" class=" font-light ">1 billion</span> </p>
+          <p class=" font-[600] text-[14px]  ">
+            Population: 
+            <span id="population" class=" font-light ">1 billion</span> 
+          </p>
 
-          <p class=" font-[600] ">Region: <span id="region" class=" font-light ">Africa</span> </p>
+          <p class=" font-[600] text-[14px] ">
+            Region: 
+            <span id="region" class=" font-light ">Africa</span> 
+          </p>
 
-          <p class=" font-[600] ">Capital: <span id="capital" class=" font-light ">Abuja</span> </p>
+          <p class=" font-[600] text-[14px] ">
+            Capital: 
+            <span id="capital" class=" font-light ">Abuja</span>
+          </p>
 
         </div>
       </div>
       
+      <img src="./assets/img/loading.svg" alt="" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-12 ">
       
     </div>
 
@@ -78,7 +91,8 @@
 
   </main>
 
-
-
+  <script src="./scripts/country.js"></script>
+  <script src="./scripts/ui.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
