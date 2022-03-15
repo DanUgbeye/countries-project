@@ -103,7 +103,7 @@ const UI = {
 
     let details = `
     
-      <img src="${country.flag}" alt="${country.name} flag" class=" max-w-[20rem] aspect-auto min-w-[300px] md:h-fit md:w-full lg:max-w-[800px] flex items-start justify-start " loading="lazy" />
+      <img src="${country.flag}" alt="${country.name} flag" class=" max-w-[20rem] max-h-[calc(20rem/2)] min-w-[300px] md:h-fit md:w-full lg:max-w-[800px] flex items-start justify-start " loading="lazy" />
 
       <div class=" md:w-full h-fit ">
 

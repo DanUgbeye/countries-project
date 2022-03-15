@@ -556,6 +556,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-height: 7.5rem;
 }
 
+.max-h-\[calc\(20rem\/2\)\] {
+  max-height: calc(20rem / 2);
+}
+
 .min-h-\[7\.5rem\] {
   min-height: 7.5rem;
 }
