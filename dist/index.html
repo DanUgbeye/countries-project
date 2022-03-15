@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Countries</title>
 </head>
-<body class=" bg-[hsl(0_0%_98%)]  ">
+<body class=" bg-[hsl(0_0%_98%)] min-h-[100vh] ">
   
   <header class=" shadow-md bg-[hsl(0_0%_100%)] flex px-4 justify-between py-4 mb-8 ">
 
@@ -20,7 +20,7 @@
 
   </header>
 
-  <main class=" px-6 md:px-12 ">
+  <main class=" relative px-6 md:px-12 ">
 
     <section class=" mb-8  md:flex md:justify-between ">
 
@@ -48,7 +48,7 @@
       
     </section>
 
-    <div id="country-container" class=" relative flex flex-col gap-10 items-center sm:grid sm:justify-between sm:place-items-center  sm:grid-cols-[repeat(auto-fit,_15rem)]  ">
+    <div id="country-container" class=" relative h-fit flex flex-col gap-10 items-center sm:grid sm:justify-between sm:place-items-center  sm:grid-cols-[repeat(auto-fit,_15rem)]  ">
 
       <!-- A COUNTRY -->
       <div id="country" class=" hidden w-fit shadow-md overflow-hidden rounded-md ">
@@ -79,7 +79,7 @@
         </div>
       </div>
       
-      <img src="./assets/img/loading.svg" alt="" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-[5rem] ">
+      <img src="./assets/img/loading.svg" alt="" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-[50%] bottom-[50%] translate-y-[50%] ">
       
     </div>
 

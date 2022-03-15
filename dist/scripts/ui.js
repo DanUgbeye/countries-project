@@ -114,29 +114,29 @@ const UI = {
         <div id="country-details" class=" flex gap-8 my-8 flex-col   lg:flex-row ">
 
           <!-- LEFT SIDE -->
-          <div class=" w-full ">
+          <div class=" w-full max-w-[350px] ">
 
-            <p class=" font-[600] text-[14px]  ">
+            <p class=" font-[600] mb-2 text-[14px]  ">
               Native Name: 
               <span id="native-name" class=" font-light ">${country.nativeName}</span> 
             </p>
 
-            <p class=" font-[600] text-[14px]  ">
+            <p class=" font-[600] mb-2 text-[14px]  ">
               Population: 
               <span id="population" class=" font-light ">${country.population}</span> 
             </p>
 
-            <p class=" font-[600] text-[14px] ">
+            <p class=" font-[600] mb-2 text-[14px] ">
               Region: 
               <span id="region" class=" font-light ">${country.region}</span> 
             </p>
 
-            <p class=" font-[600] text-[14px] ">
+            <p class=" font-[600] mb-2 text-[14px] ">
               Sub Region: 
               <span id="sub-region" class=" font-light ">${country.subregion}</span>
             </p>
 
-            <p class=" font-[600] text-[14px] ">
+            <p class=" font-[600] mb-2 text-[14px] ">
               Capital: 
               <span id="capital" class=" font-light ">${country.capital}</span>
             </p>
@@ -146,17 +146,17 @@ const UI = {
           <!-- RIGHT SIDE -->
           <div class=" w-full ">
 
-            <p class=" font-[600] text-[14px]  ">
+            <p class=" font-[600] mb-2 text-[14px]  ">
               Top Level Domain: 
               <span id="top-level-domain" class=" font-light ">${country.topLevelDomain}</span> 
             </p>
 
-            <p class=" font-[600] text-[14px]  ">
+            <p class=" font-[600] mb-2 text-[14px]  ">
               Currencies: 
               <span id="currency" class=" font-light ">${currencies}</span>
             </p>
 
-            <p class=" font-[600] text-[14px]  ">
+            <p class=" font-[600] mb-2 text-[14px]  ">
               Languages: 
               <span id="languages" class=" font-light ">${languages}</span> 
             </p>
@@ -172,7 +172,7 @@ const UI = {
             Border&nbsp;Countries: 
           </p>
 
-          <div class="  w-full grid grid-cols-[repeat(auto-fill,_8rem)] gap-1 py-4 lg:py-0  ">
+          <div class="  w-full grid auto-rows-[1fr] grid-cols-[repeat(auto-fill,_8rem)] gap-1 py-4 lg:py-0  ">
             ${borderCountries}
           </div>
 
