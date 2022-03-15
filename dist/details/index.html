@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=" text-[14px] md:text-[16px]  ">
+<html lang="en" class=" text-[14px] sm:text-[16px]  ">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../style.css">
   <title>Countries</title>
 </head>
-<body class=" bg-[hsl(0_0%_98%)]  ">
+<body class=" bg-[hsl(0_0%_98%)] min-h-[100vh]  ">
   
   <header class=" shadow-md bg-[hsl(0_0%_100%)] flex px-4 justify-between py-4 mb-8 w-full ">
 
@@ -20,32 +20,32 @@
 
   </header>
 
-  <main class=" px-6 md:px-12 ">
+  <main class=" mx-8 md:mx-[4rem] ">
 
     <section class=" mb-8 ">
       <!-- BACK BUTTON -->
-      <a href="#" id="back-btn" class=" flex py-2 px-4 shadow-md gap-1 w-fit max-w-fit ">
+      <a href="../" id="back-btn" class=" flex py-2 px-4 shadow-md gap-1 w-fit max-w-fit ">
         <img src="../assets/img/back.svg" alt="back" class="  ">
         <span class="  ">Back</span>
       </a>
       
     </section>
 
-    <!-- A COUNTRY -->
-    <div id="country" class=" overflow-hidden flex flex-col gap-4 md:flex-row w-full ">
+    <!-- COUNTRY DETAILS-->
+    <div id="details-container" class=" overflow-hidden flex flex-col gap-8 lg:items-center lg:flex-row w-full ">
 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="country flag" class=" max-w-[19rem] h-fit md:w-full md:max-w-[50%] flex items-start justify-start " loading="lazy" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="country flag" class=" max-w-[19rem] min-w-[300px] h-fit md:w-full md:max-w-[50%] flex items-start justify-start " loading="lazy" />
 
-      <div class=" px-4 md:w-full ">
+      <div class=" md:w-full h-fit ">
 
         <h3 id="country-name" class=" font-[600] text-2xl mb-3 ">
           Nigeria
         </h3>
 
-        <div id="country-details" class=" flex gap-8 my-8 flex-col   md:flex-row ">
+        <div id="country-details" class=" flex gap-8 my-8 flex-col   lg:flex-row ">
 
           <!-- LEFT SIDE -->
-          <div class="  ">
+          <div class=" w-full ">
 
             <p class=" font-[600] text-[14px]  ">
               Native Name: 
@@ -75,11 +75,11 @@
           </div>
 
           <!-- RIGHT SIDE -->
-          <div class="  ">
+          <div class=" w-full ">
 
             <p class=" font-[600] text-[14px]  ">
               Top Level Domain: 
-              <span id="native-name" class=" font-light ">.ng</span> 
+              <span id="top-level-domain" class=" font-light ">.ng</span> 
             </p>
 
             <p class=" font-[600] text-[14px]  ">
@@ -97,27 +97,37 @@
         </div>
 
         <!-- BORDER COUNTRIES -->
-        <div id="border-countries" class="  ">
+        <div id="border-countries" class=" flex flex-col lg:flex-row gap-2 lg:items-baseline  ">
 
-          <p class=" font-[600] text-[14px]  ">
-            Border Countries: 
+          <p class=" font-[600] text-[14px] w-fit ">
+            Border&nbsp;Countries: 
           </p>
 
-          <div class=" grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 grid-flow-col py-4 ">
+          <div class=" w-full grid grid-cols-[repeat(auto-fill,_8rem)] gap-1 py-4 lg:py-0 ">
 
-            <div class=" bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-md text-center ">
+            <a href="#" id="country" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
               France
-            </div>
+            </a>
 
-            <div class=" bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-md text-center ">
+            <a href="#" id="country" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
               Netherlands
-            </div>
+            </a>
+
+            <a href="#" id="country" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
+              Netherlands
+            </a>
+
+            <a href="#" id="country" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
+              Netherlands
+            </a>
+
+            <a href="#" id="country" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
+              Netherlands
+            </a>
 
           </div>
 
         </div>
-
-        
 
       </div>
     </div>
@@ -127,8 +137,9 @@
 
   </main>
 
-  <!-- <script src="../scripts/country.js"></script>
-  <script src="../scripts/ui.js"></script>
-  <script src="../index.js"></script> -->
+  <script type="module" src="../scripts/country.js"></script>
+  <script type="module" src="../scripts/ui.js"></script>
+  <script type="module" src="../scripts/app.js"></script>
+  <script type="module" src="./details.js"></script>
 </body>
 </html>
