@@ -534,6 +534,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.aspect-auto {
+  aspect-ratio: auto;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -610,6 +614,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-\[350px\] {
   max-width: 350px;
+}
+
+.max-w-\[20rem\] {
+  max-width: 20rem;
 }
 
 .translate-x-\[-50\%\] {
@@ -901,6 +909,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:h-fit {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .md\:w-full {
