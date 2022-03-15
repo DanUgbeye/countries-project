@@ -12,7 +12,7 @@ const UI = {
       countries += `
       
       <!-- ${(data[i].name).toUpperCase()} -->
-      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-fit shadow-md overflow-hidden rounded-md ">
+      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-fit max-w-[7.5rem] shadow-md overflow-hidden rounded-md ">
 
         <img src="${data[i].flag}" alt="${data[i].name} flag" class=" min-w-[15rem] max-h-[7.5rem] min-h-[7.5rem] " loading="lazy" />
 
@@ -103,7 +103,7 @@ const UI = {
 
     let details = `
     
-      <img src="${country.flag}" alt="${country.name} flag" class=" max-w-[20rem] max-h-[calc(20rem/2)] min-w-[300px] md:h-fit md:w-full lg:max-w-[800px] flex items-start justify-start " loading="lazy" />
+      <img src="${country.flag}" alt="${country.name} flag" class=" max-w-[20rem] max-h-[calc(20rem/2)] min-w-[300px] md:h-fit md:w-full lg:max-w-[800px] lg:max-h-[calc(800px/2)] flex items-start justify-start " loading="lazy" />
 
       <div class=" md:w-full h-fit ">
 
