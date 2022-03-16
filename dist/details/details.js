@@ -1,12 +1,11 @@
 import {showCountryDetails, saveCountryDetails, toggleTheme} from '../scripts/app.js';
 
 document.addEventListener('click', (e) => {
-  // console.log(e.target.id);
-  saveCountryDetails(e);
+  saveCountryDetails(e, 'details');
 
 })
 
 window.onload = () => {
   showCountryDetails();
-  toggleTheme();
+  toggleTheme('details');
 }

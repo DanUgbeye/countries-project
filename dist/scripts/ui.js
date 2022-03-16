@@ -181,15 +181,20 @@ const UI = {
 
   },
 
-  theme : (mode) => {
+  theme : (mode, details) => {
+
+    let linkAmmend = '';
+    if(details === 'details') {
+        linkAmmend = '.';
+    }
 
     const lightMode = `
-      <img src="./assets/img/light-mode.svg" alt="light mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <img src="${linkAmmend}./assets/img/light-mode.svg" alt="light mode" class="max-w-[1.5rem] w-[1.5rem] ">
       <span>Light&nbsp;Mode</span> 
     `;
 
     const darkMode = `
-      <img src="./assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <img src="${linkAmmend}./assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
       <span>Dark&nbsp;Mode</span> 
     `;
     const root = document.querySelector('html');
