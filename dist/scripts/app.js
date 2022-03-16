@@ -29,7 +29,7 @@ const showCountries = async () => {
 
 }
 
-const saveCountryDetails = (e) => {
+const saveCountryDetails = (e, details) => {
   let country;
   let isCountryElement = false;
   let path;
@@ -50,8 +50,10 @@ const saveCountryDetails = (e) => {
           e.preventDefault();
           isCountryElement = true;
           country = element.dataset.country;
-          console.log(country);
           localStorage.setItem('selectedCountry', JSON.stringify(country));
+          if(details === 'details') {
+            window.location.href = './';
+          }
           window.location.href = './details/';
           return false;
         }
@@ -79,15 +81,15 @@ const showCountryDetails = () => {
 
 }
 
-const toggleTheme = () => {
+const toggleTheme = (details) => {
   const toggleButton = document.querySelector('#theme-toggle');
   const theme = localStorage.getItem('theme');
-  
+ 
   if(theme) {
-    ui.theme(theme);
+    ui.theme(theme, details);
   }
   toggleButton.addEventListener('click', () => {
-    ui.theme();
+    ui.theme('', details);
   });
 }
 
