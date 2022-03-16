@@ -81,4 +81,16 @@ const showCountryDetails = () => {
 
 }
 
-export {showCountries, saveCountryDetails, showCountryDetails};
+const toggleTheme = () => {
+  const toggleButton = document.querySelector('#theme-toggle');
+  const theme = localStorage.getItem('theme');
+  
+  if(theme) {
+    ui.theme(theme);
+  }
+  toggleButton.addEventListener('click', () => {
+    ui.theme();
+  });
+}
+
+export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme};

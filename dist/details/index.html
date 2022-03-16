@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=" text-[14px] sm:text-[16px]  ">
+<html lang="en" class=" text-[14px] sm:text-[16px] transition-all ease-in-out duration-400 ">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="../style.css">
   <title>Countries</title>
 </head>
-<body class=" bg-[hsl(0_0%_98%)] min-h-[100vh]  ">
+<body class=" bg-primary text-text min-h-[100vh]  ">
   
-  <header class=" shadow-md bg-[hsl(0_0%_100%)] flex px-4 justify-between py-4 mb-8 w-full ">
+  <header class=" shadow-md bg-secondary flex px-4 justify-between py-4 mb-8 w-full ">
 
     <h2 class=" font-bold text-lg sm:text-2xl ">Where in the World?</h2>
 
-    <button class=" relative flex gap-1 justify-center items-center font-semibold w-fit max-w-none "> 
+    <button id="theme-toggle" class=" relative flex gap-1 justify-center items-center font-normal text-sm w-fit max-w-none "> 
       <img src="../assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
       <span>Dark&nbsp;Mode</span> 
     </button>
@@ -24,7 +24,7 @@
 
     <section class=" mb-8 ">
       <!-- BACK BUTTON -->
-      <a href="../" id="back-btn" class=" flex py-2 px-4 shadow-md gap-1 w-fit max-w-fit ">
+      <a href="../" id="back-btn" class=" flex bg-secondary py-2 px-4 shadow-md gap-1 w-fit max-w-fit ">
         <img src="../assets/img/back.svg" alt="back" class="  ">
         <span class="  ">Back</span>
       </a>

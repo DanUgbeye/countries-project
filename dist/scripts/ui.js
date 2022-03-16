@@ -12,11 +12,11 @@ const UI = {
       countries += `
       
       <!-- ${(data[i].name).toUpperCase()} -->
-      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-fit max-w-[20rem] shadow-md overflow-hidden rounded-md ">
+      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-fit max-w-[20rem] shadow-md overflow-hidden rounded-md bg-secondary ">
 
         <img src="${data[i].flag}" alt="${data[i].name} flag" class=" min-w-[20rem] max-h-[10rem] min-h-[10rem] " loading="lazy" />
 
-        <div class=" p-8 bg-[hsl(0_0%_100%)] ">
+        <div class=" p-8 ">
 
           <h3 id="country-name" class=" font-[600] text-xl mb-3 ">
             ${data[i].name}
@@ -54,7 +54,7 @@ const UI = {
 
   showDetails : (country) => {
 
-    console.log(country);
+    // console.log(country);
     //loading the currencies to display
     let currencies = '';
     for(let i = 0; i < country.currencies.length; i++) {
@@ -92,7 +92,7 @@ const UI = {
         let borderCountry = COUNTRY.getCountryByAlpha3Code(country.borders[i]);
   
         borderCountries += `
-          <a href="#" id="country" data-country="${borderCountry.alpha3Code}" class=" min-w-[8rem] max-w-[8rem] bg-[hsl(0_0%_100%)] shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
+          <a href="#" id="country" data-country="${borderCountry.alpha3Code}" class=" min-w-[8rem] max-w-[8rem] bg-secondary shadow-md py-1 px-4 rounded-sm justify-center flex items-center ">
             ${borderCountry.name}
           </a>
         `;
@@ -182,8 +182,48 @@ const UI = {
     `
     document.querySelector('#details-container').innerHTML = details;
 
-  }
+  },
 
+  theme : (mode) => {
+
+    const lightMode = `
+      <img src="/countries-project/dist/assets/img/light-mode.svg" alt="light mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <span>Light&nbsp;Mode</span> 
+    `;
+
+    const darkMode = `
+      <img src="/countries-project/dist/assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <span>Dark&nbsp;Mode</span> 
+    `;
+    const root = document.querySelector('html');
+    const toggleButton = document.querySelector('#theme-toggle');
+
+    if(!mode) {
+      if(root.classList.contains('dark-mode')) {
+        toggleButton.innerHTML = darkMode;
+        localStorage.setItem('theme', 'light');
+      }else {
+        toggleButton.innerHTML = lightMode;
+        localStorage.setItem('theme', 'dark');
+      }
+      root.classList.toggle('dark-mode');
+      return;
+    }
+
+    if(mode === 'light') {
+      toggleButton.innerHTML = darkMode;
+      root.classList.remove('dark-mode');
+    }else if(mode === 'dark') {
+      toggleButton.innerHTML = lightMode;
+      root.classList.add('dark-mode');
+    }
+
+
+  },
+
+  showError : (error) => {
+
+  }
 }
 
 export {UI};

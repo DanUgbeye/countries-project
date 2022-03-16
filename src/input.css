@@ -7,3 +7,15 @@
 *{
   font-family: 'Nunito Sans', sans-serif;
 }
+
+:root {
+  --primary-color: 0, 0%, 98%;
+  --secondary-color: 0, 0%, 100%;
+  --text-color: 200, 15%, 8%;
+}
+
+.dark-mode {
+  --primary-color: 207, 26%, 17%;
+  --secondary-color: 209, 23%, 22%;
+  --text-color: 0, 0%, 100%;
+}

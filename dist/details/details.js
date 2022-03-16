@@ -1,4 +1,4 @@
-import {showCountryDetails, saveCountryDetails} from '../scripts/app.js';
+import {showCountryDetails, saveCountryDetails, toggleTheme} from '../scripts/app.js';
 
 document.addEventListener('click', (e) => {
   // console.log(e.target.id);
@@ -8,4 +8,5 @@ document.addEventListener('click', (e) => {
 
 window.onload = () => {
   showCountryDetails();
+  toggleTheme();
 }
