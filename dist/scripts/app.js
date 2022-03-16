@@ -96,7 +96,13 @@ const searchCountry = async () => {
   searchInput.addEventListener('input', async () => {
     let param = searchInput.value;
     let paramType = 'name';
-    const data = await country.searchCountry(param, paramType);
+    const res = await country.searchCountry(param, paramType);
+
+    if(res.error) {
+      ui.showError();
+      return;
+    }
+    const data = await res.data;
     ui.showCountries(data);
   })
 }
@@ -105,8 +111,13 @@ const filterCountries = async () => {
   let region = document.querySelector('#region')
   region.addEventListener('change', async () => {
     const selectedRegion = region.value;
-    const data = await country.filterByRegion(selectedRegion);
-    console.log(data);
+    const res = await country.filterByRegion(selectedRegion);
+
+    if(res.error) {
+      ui.showError();
+      return;
+    }
+    const data = await res.data;
     ui.showCountries(data);
   })
 }

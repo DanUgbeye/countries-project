@@ -19,8 +19,7 @@ const COUNTRY = {
 
     const url = `https://restcountries.com/v2/region/${region}`;
     const res = await COUNTRY.get(url);
-    const data = await res.data;
-    return data;
+    return res;
     
   },
 
@@ -28,8 +27,7 @@ const COUNTRY = {
     
     const url = `https://restcountries.com/v2/${paramType}/${param}`;
     const res = await COUNTRY.get(url);
-    const data = await res.data;
-    return data;
+    return res;
 
   },
 
