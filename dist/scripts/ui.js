@@ -184,12 +184,12 @@ const UI = {
   theme : (mode) => {
 
     const lightMode = `
-      <img src="/countries-project/dist/assets/img/light-mode.svg" alt="light mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <img src="./assets/img/light-mode.svg" alt="light mode" class="max-w-[1.5rem] w-[1.5rem] ">
       <span>Light&nbsp;Mode</span> 
     `;
 
     const darkMode = `
-      <img src="/countries-project/dist/assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
+      <img src="./assets/img/dark-mode.svg" alt="dark mode" class="max-w-[1.5rem] w-[1.5rem] ">
       <span>Dark&nbsp;Mode</span> 
     `;
     const root = document.querySelector('html');

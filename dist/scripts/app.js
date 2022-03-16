@@ -52,7 +52,7 @@ const saveCountryDetails = (e) => {
           country = element.dataset.country;
           console.log(country);
           localStorage.setItem('selectedCountry', JSON.stringify(country));
-          window.location.href = '/countries-project/dist/details/';
+          window.location.href = './details/';
           return false;
         }
         return true;
