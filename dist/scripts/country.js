@@ -17,18 +17,17 @@ const COUNTRY = {
 
   filterByRegion: async (region) => {
     const url = `https://restcountries.com/v2/region/${region}`;
-    const data = await this.get(url);
+    const data = await COUNTRY.get(url);
     return data;
   },
 
   searchCountry: async (param, paramType) => {
-    let data = JSON.parse(localStorage.getItem('data'));
-    if(!data) {
-      const url = `https://restcountries.com/v2/${paramType}/${param}`;
-      const res = await this.get(url);
-      data = await res.data;
-    }
+    
+    const url = `https://restcountries.com/v2/${paramType}/${param}`;
+    const res = await COUNTRY.get(url);
+    const data = await res.data;
     return data;
+    
   },
 
   getCountryByAlpha3Code: (alpha3Code) => {

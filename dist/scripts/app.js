@@ -9,8 +9,7 @@ const showCountries = async () => {
   const data = JSON.parse(localStorage.getItem('data'));
 
   if(data) {
-    const countries = await ui.loadCountries(data);
-    ui.displayCountries(countries);
+    ui.showCountries(data);
     return;
   }
   
@@ -25,8 +24,7 @@ const showCountries = async () => {
     
   if(res) {
     const data = await res.data;
-    const countries = await ui.loadCountries(data);
-    ui.displayCountries(countries);
+    ui.showCountries(data);
   }
 
 }
@@ -93,4 +91,14 @@ const toggleTheme = () => {
   });
 }
 
-export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme};
+const searchCountry = async () => {
+  let searchInput = document.querySelector('#search');
+  searchInput.addEventListener('input', async () => {
+    let param = searchInput.value;
+    let paramType = 'name';
+    const data = await country.searchCountry(param, paramType);
+    ui.showCountries(data);
+  })
+}
+
+export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme, searchCountry};

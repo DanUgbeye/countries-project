@@ -2,7 +2,7 @@ import { COUNTRY } from "./country.js";
 
 const UI = {
 
-  loadCountries : async (data) => {
+  showCountries : async (data) => {
 
     if(data.length < 1) return null;
     let countries = '';
@@ -44,12 +44,9 @@ const UI = {
   
     }
 
-    return countries;
-  },
-
-  displayCountries : (countries) => {
     if(countries == null) return;
     document.querySelector('#country-container').innerHTML = countries;
+
   },
 
   showDetails : (country) => {
