@@ -81,7 +81,7 @@ const UI = {
           //if there is no data in localstorage then fetch online
           const res = COUNTRY.get('https://restcountries.com/v2/all');
           if(res.error) {
-            this.showError(res.error);
+            UI.showError(res.error);
             return;
           }
           data = res.data;
