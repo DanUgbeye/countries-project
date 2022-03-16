@@ -220,6 +220,21 @@ const UI = {
 
   showError : (error) => {
 
+    let message = `
+    <div id="error" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-[50%] bottom-[50%] translate-y-[50%]  flex flex-col md:flex-row items-center text-red-700 p-4 border-3 border-solid border-red-700 w-fit h-fit  ">
+      <img src="./assets/img/warning.svg" alt="warning" class=" max-w-[10rem] " />
+      <div class=" text-2xl  ">An error occured, try again later</div>
+    </div>
+    `;
+
+    let container = document.querySelector('#country-container');
+    if(!container) {
+      container = document.querySelector('#details-container');
+    }
+
+    container.innerHTML = message;
+    
+
   }
 }
 
