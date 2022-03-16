@@ -101,4 +101,14 @@ const searchCountry = async () => {
   })
 }
 
-export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme, searchCountry};
+const filterCountries = async () => {
+  let region = document.querySelector('#region')
+  region.addEventListener('change', async () => {
+    const selectedRegion = region.value;
+    const data = await country.filterByRegion(selectedRegion);
+    console.log(data);
+    ui.showCountries(data);
+  })
+}
+
+export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme, searchCountry, filterCountries};

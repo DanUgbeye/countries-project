@@ -16,9 +16,12 @@ const COUNTRY = {
   },
 
   filterByRegion: async (region) => {
+
     const url = `https://restcountries.com/v2/region/${region}`;
-    const data = await COUNTRY.get(url);
+    const res = await COUNTRY.get(url);
+    const data = await res.data;
     return data;
+    
   },
 
   searchCountry: async (param, paramType) => {
@@ -27,7 +30,7 @@ const COUNTRY = {
     const res = await COUNTRY.get(url);
     const data = await res.data;
     return data;
-    
+
   },
 
   getCountryByAlpha3Code: (alpha3Code) => {
