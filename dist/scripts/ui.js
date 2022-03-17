@@ -34,7 +34,7 @@ const UI = {
 
           <p class=" font-[600] mb-2 text-[14px] ">
             Capital: 
-            <span id="capital" class=" font-light ">${data[i].capital}</span>
+            <span id="capital" class=" font-light ">${data[i].capital ? data[i].capital : 'none'}</span>
           </p>
 
         </div>
@@ -135,7 +135,7 @@ const UI = {
 
             <p class=" font-[600] mb-2 text-[14px] ">
               Capital: 
-              <span id="capital" class=" font-light ">${country.capital}</span>
+              <span id="capital" class=" font-light ">${country.capital ? country.capital : 'none'}</span>
             </p>
 
           </div>

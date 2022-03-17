@@ -43,16 +43,17 @@ const saveCountryDetails = (e, details) => {
 
   if(path){
     e.composedPath().every( element => {
-      // let data = JSON.stringify(element.dataset);
       if(element.dataset) {
-        // console.log(element, element.dataset);
         if(element.dataset.country) {
           e.preventDefault();
           isCountryElement = true;
           country = element.dataset.country;
           localStorage.setItem('selectedCountry', JSON.stringify(country));
           if(details === 'details') {
-            window.location.href = './';
+            let link = window.location.href;
+            console.log(link);
+            window.location.href = link;
+            return false;
           }
           window.location.href = './details/';
           return false;
