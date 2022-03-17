@@ -8,7 +8,7 @@ const UI = {
 
     if(data.length < 1 || data.message == 'Page Not Found' || data.message == 'Not Found') {
       countries = `
-        <img src="./assets/img/no-results.svg" alt="No results" class=" max-w-[15rem] max-h-[7.5rem] md:max-w-[20rem] md:max-h-[10rem] " />
+        <img src="./assets/img/no-results.svg" alt="No results" class=" max-w-[15rem] max-h-[7.5rem] md:max-w-[20rem] md:max-h-[10rem] mx-auto " />
       `;
       document.querySelector('#country-container').innerHTML = countries;
       return ;
