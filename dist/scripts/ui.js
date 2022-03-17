@@ -4,8 +4,16 @@ const UI = {
 
   showCountries : async (data) => {
 
-    if(data.length < 1) return null;
     let countries = '';
+    console.log(data);
+
+    if(data.length < 1 || data.message == 'Page Not Found') {
+      countries = `
+        <img src="./assets/img/no-results.svg" alt="No results" class=" max-w-[15rem] max-h-[7.5rem] md:max-w-[20rem] md:max-h-[10rem] " />
+      `;
+      document.querySelector('#country-container').innerHTML = countries;
+      return ;
+    }
 
     for(let i = 0; i < data.length; i++) {
     
@@ -226,7 +234,7 @@ const UI = {
   showError : (error) => {
 
     let message = `
-    <div id="error" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-[50%] bottom-[50%] translate-y-[50%]  flex flex-col md:flex-row items-center text-red-700 p-4 border-3 border-solid border-red-700 w-fit h-fit  ">
+    <div id="error" class=" absolute left-[50%] right-[50%] translate-x-[-50%] top-0  flex flex-col md:flex-row items-center text-red-700 p-4 w-full min-w-[15rem] h-fit  ">
       <img src="./assets/img/warning.svg" alt="warning" class=" max-w-[10rem] " />
       <div class=" text-2xl  ">An error occured, try again later</div>
     </div>

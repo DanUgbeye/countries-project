@@ -12,20 +12,25 @@ const showCountries = async () => {
     ui.showCountries(data);
     return;
   }
-  
-  const res = await country.get('https://restcountries.com/v2/al');
-  localStorage.setItem('data', JSON.stringify(res.data));
-  if(res != undefined) {
-    if(res.error) {
-      ui.showError(res.error); 
-      return;
+
+  try {
+    const res = await country.get('https://restcountries.com/v2/all');
+    localStorage.setItem('data', JSON.stringify(res.data));
+    if(res != undefined) {
+      if(res.error) {
+        ui.showError(res.error); 
+        return;
+      }
     }
+      
+    if(res) {
+      data = await res.data;
+      ui.showCountries(data);
+    }
+  } catch(err) {
+    ui.showError(err)
   }
-    
-  if(res) {
-    const data = await res.data;
-    ui.showCountries(data);
-  }
+  
 
 }
 
