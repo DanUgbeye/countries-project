@@ -9,7 +9,7 @@
     "build-style": "npx tailwind -i ./src/input.css -o ./dist/style.css --build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Ugbeye",
   "license": "ISC",
   "dependencies": {
     "tailwindcss": "^3.0.23"
