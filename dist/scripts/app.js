@@ -117,13 +117,15 @@ const searchCountry = async () => {
     if(param) {
       const res = await country.searchCountry(param, paramType);
   
-      if(res.error) {
-        ui.showError();
+      if(res) {
+        if(res.error) {
+          ui.showError(res.error);
+          return;
+        }
+        const data = await res.data;
+        ui.showCountries(data);
         return;
       }
-      const data = await res.data;
-      ui.showCountries(data);
-      return;
     }
 
     //if the search input is empty, show all countries
@@ -140,7 +142,7 @@ const filterCountries = async () => {
     const res = await country.filterByRegion(selectedRegion);
 
     if(res.error) {
-      ui.showError();
+      ui.showError(res.error);
       return;
     }
     const data = await res.data;

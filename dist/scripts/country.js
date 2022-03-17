@@ -7,12 +7,12 @@ const COUNTRY = {
       const res = await fetch(url);
       const data = await res.json();
       resObj.data = data;
-      return resObj;
 
-    }catch{(err) => {
-      console.log(err);
+    }catch(err) {
       resObj.error = err;
-    }}
+    }
+    return resObj;
+
   },
 
   filterByRegion: async (region) => {
