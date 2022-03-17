@@ -12,11 +12,11 @@ const UI = {
       countries += `
       
       <!-- ${(data[i].name).toUpperCase()} -->
-      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-fit max-w-[20rem] shadow-md overflow-hidden rounded-md bg-secondary ">
+      <a href="#" id="country" data-country="${data[i].alpha3Code}" data-id="${i}" class=" w-full max-w-[20rem] shadow-md overflow-hidden rounded-md bg-secondary h-full mb-12 p-0 flex flex-col sm:mb-0 sm:col-span-6 md:col-span-4 lg:col-span-3 ">
 
-        <img src="${data[i].flag}" alt="${data[i].name} flag" class=" min-w-[20rem] max-h-[10rem] min-h-[10rem] " loading="lazy" />
+        <img src="${data[i].flag}" alt="${data[i].name} flag" class=" max-h-[40%] min-h-[40%] table overflow-auto " loading="lazy" />
 
-        <div class=" p-8 ">
+        <div class=" p-6 h-full ">
 
           <h3 id="country-name" class=" font-[600] text-xl mb-3 ">
             ${data[i].name}
@@ -24,7 +24,7 @@ const UI = {
 
           <p class=" font-[600] mb-2 text-[14px]  ">
             Population: 
-            <span id="population" class=" font-light ">${data[i].population}</span> 
+            <span id="population" class=" font-light ">${data[i].population.toLocaleString("en-US")}</span> 
           </p>
 
           <p class=" font-[600] mb-2 text-[14px] ">
@@ -57,7 +57,7 @@ const UI = {
     for(let i = 0; i < country.currencies.length; i++) {
       currencies += `${country.currencies[i].name}`;
       if(i < country.currencies.length - 1) {
-        currencies += ',';
+        currencies += ', ';
       }
     }
 
@@ -66,7 +66,7 @@ const UI = {
     for(let i = 0; i < country.languages.length; i++) {
       languages += `${country.languages[i].name}`;
       if(i < country.languages.length - 1) {
-        languages += ',';
+        languages += ', ';
       }
     }
 
@@ -120,7 +120,7 @@ const UI = {
 
             <p class=" font-[600] mb-2 text-[14px]  ">
               Population: 
-              <span id="population" class=" font-light ">${country.population}</span> 
+              <span id="population" class=" font-light ">${country.population.toLocaleString("en-US")}</span> 
             </p>
 
             <p class=" font-[600] mb-2 text-[14px] ">
