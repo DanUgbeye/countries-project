@@ -13,7 +13,7 @@ const showCountries = async () => {
     return;
   }
   
-  const res = await country.get('https://restcountries.com/v2/all');
+  const res = await country.get('https://restcountries.com/v2/al');
   localStorage.setItem('data', JSON.stringify(res.data));
   if(res != undefined) {
     if(res.error) {
@@ -95,22 +95,40 @@ const toggleTheme = (details) => {
 }
 
 const searchCountry = async () => {
+
   let searchInput = document.querySelector('#search');
+
+  //empty search input when it is clicked on
+  searchInput.addEventListener('click', () => {
+    searchInput.value = '';
+  });
+
+  //fetch the country that is inputed
   searchInput.addEventListener('input', async () => {
     let param = searchInput.value;
     let paramType = 'name';
-    const res = await country.searchCountry(param, paramType);
 
-    if(res.error) {
-      ui.showError();
+    //if the search input is not empty
+    if(param) {
+      const res = await country.searchCountry(param, paramType);
+  
+      if(res.error) {
+        ui.showError();
+        return;
+      }
+      const data = await res.data;
+      ui.showCountries(data);
       return;
     }
-    const data = await res.data;
-    ui.showCountries(data);
+
+    //if the search input is empty, show all countries
+    showCountries();
   })
+
 }
 
 const filterCountries = async () => {
+
   let region = document.querySelector('#region')
   region.addEventListener('change', async () => {
     const selectedRegion = region.value;
@@ -122,7 +140,8 @@ const filterCountries = async () => {
     }
     const data = await res.data;
     ui.showCountries(data);
-  })
+  });
+
 }
 
 export {showCountries, saveCountryDetails, showCountryDetails, toggleTheme, searchCountry, filterCountries};
